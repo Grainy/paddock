@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{{#if offline}}<html manifest="manifest.appcache" lang="en">{{/if}}
+{{#unless offline}}<html lang="en">{{/unless}}
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<title>{{title}}</title>
+	<link rel="stylesheet" href="{{assets}}/css/bootstrap.min.css">
+	<style>
+	    body {
+	        padding-top: 50px;
+	        padding-bottom: 20px;
+	    }
+	</style>
+	<link rel="stylesheet" href="{{assets}}/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="{{assets}}/css/screen.css">
+
+</head>
+<body>
+	{{>nav}}
+			{{>body}}
+
+			<hr>
+			<footer>
+			  <p>&copy; Company 2013</p>
+			</footer>
+		</div>
+	<script src="{{assets}}/js/lib.min.js"></script>
+	{{#if production}}{{>dev}}{{/if}}
+</body>
+</html>
